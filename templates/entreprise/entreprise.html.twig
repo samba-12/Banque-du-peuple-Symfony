@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entreprise{% endblock %}
+{% block stylesheets %} 
+<link rel="stylesheet" href="{{ asset('script/style2.css')}}">
+<link type="text/css" rel="stylesheet" href="{{ asset('script/bootstrap.min.css')}}">
+
+{% endblock %}  
+
+{% block body %}
+
+      <div><img src="{{ asset('img/logoajout.png')}}" class="logoajout"></div>
+              <ul class="menu">
+                  <li><a href={{path('index')}}>Accueil</a></li>
+                  <li><a href={{path('accueil_liste')}}>Liste clients</a></li>
+                  <li><a href={{path ('accueilajout')}} >Ajouter client</a></li>
+                  <li><a href="#Virement">Virement</a></li>
+                  <li><a href="#Assistance">Assistance</a></li>
+              </ul>
+    <h2>ENTREPRISE</h2>
+
+   
+<div> 
+      {{form_start(form, { ' action ' : path ( 'entreprise_add' ), ' method ' : ' POST ' , ' attr ' : { ' class ' : ' row ' }})}}
+           {#  <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.nom_entreprise) }}</div>
+            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.adresse) }}</div>
+            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.Email) }}</div> #}
+    <div class="form">     
+        <div class="formajout">
+            <div class="col" id="nom_entreprise">
+                {{ form_row(form.nom_entreprise) }}
+            </div>
+            <div class="col" id="some-custom-id">
+                {{ form_row(form.adresse) }}
+            </div>
+            <div class="col" id="some-custom-id">
+                {{ form_row(form.Email) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.telephone) }}
+            </div>
+        </div>
+        <div class="formajout2"> 
+            <div class="col" id="some-custom-id">
+                {{ form_row(form.ninea) }}
+            </div>
+            <div class="col" id="some-custom-id">
+                {{ form_row(form.compte) }}
+            </div>
+            <div class="col" id="some-custom-id">
+                {{ form_row(form.numero) }}
+            </div>
+            <div class="col" id="some-custom-id">
+                {{ form_row(form.Valider) }}
+          </div>
+         </div> 
+    </div>
+      {{form_end ( form )}}
+  
+</div>
+  
+    {# <form method="POST"  class="form">
+      <div class="formajout">
+            <label for="nom_entreprise">Nom Entreprise* :</label><br><input name="nom_entreprise" id="nom_entreprise" type="text" required="required"/> 
+            <span id="absence_nom_entreprise"></span><br>
+            <label for="adresse">Adresse * :</label><br><input name="adresse" id="adresse" type="text"required="required"  />
+            <span id="absence_adresse"></span><br>
+            <label for="email">Email :</label><br><input name="email" id="email" type="email" /><br><br>
+            <label for="tel">Telephone * :</label><br><input name="telephone" id="telephone" type="telephone" required="required"  /> 
+            <span id="absence_tel"></span><br>
+      </div>
+      <div class="formajout2">
+            <label for="salaire">NINEA * :</label><br><input name="ninea" id="ninea" type="number" required="required"/> 
+            <br><br> 
+            		<select id="compte" name="compte" required="required">
+            		     <option>Choisissez un type de compte *</option>
+            		     <option>Compte épargne simple et xeewel</option>
+            		     <option>Compte courant</option>
+            		     <option>Compte bloque</option>
+            		</select >
+                <span id="absence_list"></span>
+                <br>
+                <label for="numero">Numero compte* :</label><br><input name="numero" id="numero" type="number" required="required" /> 
+      </div>
+      <div class="col-container1">
+                <div class="col"><input type="submit" value="Valider" id="envoyer"></div>
+                <div class="col"><input type="submit" value="Annuler" ></div>
+      </div>
+    </form> #}
+<script "{{ asset('script/script1.js')}}"></script>
+
+{% endblock %}

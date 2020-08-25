@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueilajout{% endblock %}
+{% block stylesheets %} <link rel="stylesheet" href="{{ asset('script/style2.css')}}">{% endblock %}  
+
+{% block body %}
+    <div>
+      <img src="{{ asset('img/logoajout.png')}}" class="logoajout">
+    </div>
+              <ul class="menu">
+                 <li><a href={{path('index')}}>Accueil</a></li>
+                 <li><a href={{path('accueil_liste')}}>Liste clients</a></li>
+{#               <li><a href={{path('liste')}}>Liste clients</a></li>
+ #}              <li><a href={{path('accueilajout')}}>Ajouter client</a></li>
+                 <li><a href="#Virement">Virement</a></li>
+                 <li><a href="#Assistance">Assistance</a></li>
+              </ul>
+      <h2 class="choicl">Choisissez le type de Client</h2>
+
+      <ul class="choix">
+
+                  <li><a href={{path ('entreprise')}}  class="a1">Entreprise </a></li>
+                  &nbsp&nbsp
+                   <li><a href= {{path ('personne')}}  class="a3">Client physique </a></li>
+      </ul>
+
+
+
+{% endblock %}

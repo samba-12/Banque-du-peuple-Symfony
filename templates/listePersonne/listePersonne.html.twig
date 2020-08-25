@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Liste Personne{% endblock %}
+{% block stylesheets %} 
+ <link rel="stylesheet" href="{{ asset('script/style2.css')}}">
+ <link type="text/css" rel="stylesheet" href="{{ asset('script/bootstrap.min.css')}}">
+
+{% endblock %}  
+
+{% block body %}
+<div><img src="{{ asset('img/logoajout.png')}}" class="logoajout"></div>
+              <ul class="menu">
+                  <li><a href={{path('index')}}>Accueil</a></li>
+                  <li><a href={{path('accueil_liste')}}>Liste clients</a></li>
+                  <li><a href={{path ('accueilajout')}}>Ajouter client</a></li>
+                  <li><a href="#Virement">Virement</a></li>
+                  <li><a href="#Assistance">Assistance</a></li>
+              </ul>
+              <h2 class="titleliste" style="margin-left: 550px;"> Liste des Personnes</h2>
+              <table class="table table-striped">
+                  <tr>
+                        <th> Id</th>
+                        <th> Prenom</th>
+                        <th> Nom</th>
+                        <th> Adresse</th>
+                        <th> Email</th>
+                        <th> Tel</th>
+                        <th> type de compte</th>
+                        <th> N° CNI</th>
+                        <th> Numero compte</th>
+                        <th> Salaire</th>
+                        <th> Infos employeur </th>
+                      
+                </tr>
+                
+                      {% for listeP in listeP %}
+                <tr>
+                      <td> {{listeP.Id}} </td>
+                      <td> {{listeP.prenom}}</td>
+                      <td> {{listeP.nom}}</td>
+                      <td> {{listeP.adresse}}</td>
+                      <td> {{listeP.email}}</td>
+                      <td> {{listeP.telephone}}</td>
+                      <td> {{listeP.compte}}</td>
+                      <td> {{listeP.identification}}</td>
+                      <td> {{listeP.numero}}</td>
+                      <td> {{listeP.salaire}}</td>
+                      <td> {{listeP.infosemployeur}}</td>
+                      
+                </tr>
+                  {% endfor %}
+                </table>
+{% endblock %}

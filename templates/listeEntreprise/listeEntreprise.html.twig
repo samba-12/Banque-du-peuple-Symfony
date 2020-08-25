@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste Entreprise{% endblock %}
+
+{% block stylesheets %}
+ <link rel="stylesheet" href="{{ asset('script/style2.css')}}"> 
+ <link type="text/css" rel="stylesheet" href="{{ asset('script/bootstrap.min.css')}}">
+{% endblock %} 
+{% block body %}
+{# {{dump(liste)}}
+ #}
+     <div>
+      <img src="{{ asset('img/logoajout.png')}}" class="logoajout">
+    </div>
+              <ul class="menu">
+                 <li><a href={{path('index')}}>Accueil</a></li>
+                 <li><a href={{path('accueil_liste')}}>Liste clients</a></li>
+                 <li><a href={{path('accueilajout')}}>Ajouter client</a></li>
+                 <li><a href="#Virement">Virement</a></li>
+                 <li><a href="#Assistance">Assistance</a></li>
+              </ul>
+              <h2 class="titleliste" style="margin-left: 550px;"> Liste des entreprises</h2>
+              <table class="table table-striped">
+                  <tr>
+                        <th> Id</th>
+                        <th> Nom entreprise</th>
+                        <th> Adresse</th>
+                        <th> Email</th>
+                        <th> Tel</th>
+                        <th> Ninea</th>
+                        <th> compte</th>
+                        <th> Numéro</th>
+                </tr>
+                
+                      {% for liste in liste %}
+                <tr>
+                      <td> {{liste.Id}} </td>
+                      <td> {{liste.nomentreprise}}</td>
+                      <td> {{liste.adresse}}</td>
+                      <td> {{liste.email}}</td>
+                      <td> {{liste.telephone}}</td>
+                      <td> {{liste.ninea}}</td>
+                      <td> {{liste.compte}}</td>
+                      <td> {{liste.numero}}</td>
+                </tr>
+                  {% endfor %}
+                </table>
+<script src="{$url_base}../../public/js/script1.js"></script>
+
+{% endblock %}
